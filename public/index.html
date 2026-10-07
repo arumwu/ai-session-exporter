@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Session Exporter</title><link rel="stylesheet" href="/style.css"></head>
+<body><header><h1>AI Session Exporter</h1><button id="refresh">重新讀取來源</button></header>
+<p class="intro">選擇原本的 Codex／Claude 會話。連結保留原始位置；續接使用同一個 session。匯出只處理你勾選的內容。</p>
+<p id="notice" role="status" aria-live="polite"></p>
+<main><aside><h2>已儲存的來源連結</h2><div id="links"></div><button id="browse">選擇其他來源</button></aside>
+<section id="inventory"><h2>選擇來源</h2><label>搜尋 <input id="search" type="search" placeholder="專案或會話名稱"></label><div class="actions"><button id="link">建立連結</button><button id="json">匯出 JSON</button><button id="markdown">匯出 Markdown</button><span id="count">已選 0 項</span></div><div id="sources"></div></section>
+<section id="conversation" hidden><div class="actions"><h2 id="title"></h2><button id="history-refresh">重新讀取紀錄</button><button id="remove">移除連結</button></div><p id="source-info"></p><p id="run-status" role="status"></p><div id="history" aria-label="原始對話紀錄"></div><div id="live" aria-live="polite"></div><div id="approvals"></div><form id="composer"><label for="message">接回這個來源會話</label><textarea id="message" rows="4" placeholder="輸入新訊息"></textarea><div class="actions"><button id="send" type="submit">傳送到原 session</button><button id="stop" type="button" hidden>停止這次執行</button></div></form></section>
+</main><dialog id="preview"><h2>確認來源連結</h2><p>只儲存來源資料，不搬移、不複製對話，也不立即傳送訊息。</p><div id="preview-groups"></div><p id="preview-warnings"></p><div class="actions"><button id="confirm">建立連結</button><button id="cancel">取消</button></div></dialog>
+<script src="/app.js" defer></script></body></html>
